@@ -3,13 +3,14 @@
   "short_name": "FormViewer",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#f8f9fa",
   "theme_color": "#1a73e8",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968534.png",
+      "src": "logo.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any"
     }
   ]
 }
