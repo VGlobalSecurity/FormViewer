@@ -4,54 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>VGlobal Form Viewer</title>
+    
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1a73e8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="logo.jpg">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0; color: #3c4043; }
-        .header { background: #ffffff; padding: 25px 20px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .header h1 { margin: 0; font-size: 22px; color: #1a73e8; font-weight: 600; }
-        .container { padding: 20px; max-width: 500px; margin: auto; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .card { 
-            background: white; border-radius: 12px; padding: 20px; text-decoration: none;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12); transition: all 0.2s ease; border: 1px solid #e0e0e0;
+        :root {
+            --primary: #1a73e8;
+            --bg: #f0f2f5;
+            --card-bg: #ffffff;
+            --text: #202124;
         }
-        .card:active { transform: scale(0.96); background-color: #f1f3f4; }
-        .card i { font-size: 28px; color: #1a73e8; margin-bottom: 12px; }
-        .card span { font-size: 14px; font-weight: 500; text-align: center; color: #202124; }
-        .footer { text-align: center; padding: 30px; font-size: 12px; color: #70757a; }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif; 
+            background-color: var(--bg); 
+            margin: 0; 
+            padding: 0; 
+            color: var(--text);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .header { 
+            background: #ffffff; 
+            padding: 40px 20px 30px; 
+            text-align: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
+
+        .header img {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .header h1 { 
+            margin: 0; 
+            font-size: 20px; 
+            letter-spacing: -0.5px;
+            color: var(--text);
+        }
+
+        .container { 
+            padding: 24px 16px; 
+            max-width: 500px; 
+            margin: auto; 
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #5f6368;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-left: 4px;
+            letter-spacing: 1px;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 16px; 
+        }
+
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            padding: 24px 16px; 
+            text-decoration: none;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04); 
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* Hover/Touch Effect */
+        .card:active { 
+            transform: scale(0.94); 
+            background-color: #f8f9fa; 
+        }
+
+        .card i { 
+            font-size: 32px; 
+            color: var(--primary); 
+            margin-bottom: 12px; 
+        }
+
+        .card span { 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-align: center; 
+            color: var(--text); 
+        }
+
+        .footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            font-size: 11px; 
+            color: #80868b;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
+
     <div class="header">
-        <h1>VGlobal Security Portal</h1>
+        <img src="logo.jpg" alt="VGlobal Logo">
+        <h1>Internal Forms Portal</h1>
     </div>
+
     <div class="container">
+        <p class="section-title">Available Forms</p>
         <div class="grid">
-            <a href="YOUR_LINK_HERE" class="card">
-                <i class="fas fa-file-signature"></i>
-                <span>Daily Log</span>
+            
+            <a href="PASTE_GOOGLE_FORM_LINK_HERE" class="card">
+                <i class="fas fa-clipboard-check"></i>
+                <span>Staff Attendance</span>
             </a>
-            <a href="YOUR_LINK_HERE" class="card">
-                <i class="fas fa-shield-alt"></i>
+
+            <a href="PASTE_GOOGLE_FORM_LINK_HERE" class="card">
+                <i class="fas fa-file-invoice"></i>
                 <span>Incident Report</span>
             </a>
-            <a href="YOUR_LINK_HERE" class="card">
-                <i class="fas fa-user-clock"></i>
-                <span>Attendance</span>
+
+            <a href="PASTE_GOOGLE_FORM_LINK_HERE" class="card">
+                <i class="fas fa-shield-alt"></i>
+                <span>Safety Inspection</span>
             </a>
-            <a href="YOUR_LINK_HERE" class="card">
-                <i class="fas fa-cog"></i>
-                <span>Settings</span>
+
+            <a href="PASTE_GOOGLE_FORM_LINK_HERE" class="card">
+                <i class="fas fa-user-edit"></i>
+                <span>Profile Update</span>
             </a>
+
         </div>
     </div>
-    <div class="footer">© 2024 VGlobal Security</div>
+
+    <div class="footer">
+        PROPERTY OF VGLOBAL SECURITY &middot; INTERNAL USE ONLY
+    </div>
+
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
         }
     </script>
 </body>
